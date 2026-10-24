@@ -1,0 +1,188 @@
+.flask-diagnostic {
+  display: grid;
+  gap: 18px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.flask-diagnostic__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.flask-diagnostic__icon {
+  display: grid;
+  flex: 0 0 44px;
+  height: 44px;
+  place-items: center;
+  color: #187b6b;
+  border: 1px solid rgba(50, 151, 131, 0.2);
+  border-radius: 14px;
+  background: rgba(220, 244, 237, 0.74);
+}
+
+.flask-diagnostic__header h1 {
+  margin: 3px 0 5px;
+  color: #1e3438;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 750;
+  letter-spacing: -0.04em;
+}
+
+.flask-diagnostic__intro {
+  max-width: 650px;
+  margin: 0;
+  color: #66777a;
+  line-height: 1.55;
+}
+
+.flask-diagnostic__refresh {
+  margin-left: auto;
+  gap: 7px;
+}
+
+.flask-diagnostic__status,
+.flask-diagnostic__source {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1px solid rgba(47, 112, 100, 0.13);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 8px 24px rgba(33, 76, 70, 0.05);
+}
+
+.flask-diagnostic__status {
+  color: #52676a;
+}
+
+.flask-diagnostic__status strong {
+  color: #32484a;
+}
+
+.flask-diagnostic__status > span:not(.flask-diagnostic__status-dot) {
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(234, 242, 239, 0.9);
+  font-size: 0.8rem;
+}
+
+.flask-diagnostic__status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #b29a58;
+}
+
+.flask-diagnostic__status.is-connected .flask-diagnostic__status-dot {
+  background: #24966f;
+  box-shadow: 0 0 0 4px rgba(36, 150, 111, 0.12);
+}
+
+.flask-diagnostic__status.is-error .flask-diagnostic__status-dot {
+  background: #c55050;
+}
+
+.flask-diagnostic__source {
+  gap: 8px;
+  color: #66777a;
+  font-size: 0.9rem;
+}
+
+.flask-diagnostic__source strong {
+  color: #187b6b;
+}
+
+.flask-diagnostic__source-detail {
+  margin-left: auto;
+}
+
+.flask-diagnostic__table-wrap {
+  overflow-x: auto;
+  border: 1px solid rgba(47, 112, 100, 0.14);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 12px 32px rgba(33, 76, 70, 0.06);
+}
+
+.flask-diagnostic__table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.flask-diagnostic__table th,
+.flask-diagnostic__table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(50, 89, 85, 0.09);
+}
+
+.flask-diagnostic__table th {
+  color: #617477;
+  background: rgba(242, 248, 245, 0.8);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.flask-diagnostic__table td {
+  color: #405457;
+}
+
+.flask-diagnostic__table tr:last-child td {
+  border-bottom: 0;
+}
+
+.flask-diagnostic__stock {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.flask-diagnostic__table code {
+  color: #637679;
+  font-size: 0.78rem;
+}
+
+.flask-diagnostic__error {
+  display: grid;
+  gap: 5px;
+  padding: 14px 16px;
+  border: 1px solid rgba(197, 80, 80, 0.22);
+  border-radius: 14px;
+  color: #8f3d3d;
+  background: rgba(255, 241, 239, 0.85);
+}
+
+.flask-diagnostic__empty,
+.flask-diagnostic__footnote {
+  margin: 0;
+  color: #718184;
+  font-size: 0.85rem;
+}
+
+.flask-diagnostic__spinning {
+  animation: flask-diagnostic-spin 1s linear infinite;
+}
+
+@keyframes flask-diagnostic-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 640px) {
+  .flask-diagnostic__header {
+    flex-wrap: wrap;
+  }
+
+  .flask-diagnostic__refresh {
+    margin-left: 58px;
+  }
+
+  .flask-diagnostic__source-detail {
+    width: 100%;
+    margin-left: 0;
+  }
+}
