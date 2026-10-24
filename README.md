@@ -30,8 +30,7 @@
 | --- | --- |
 | **GitHub Repository** | This repository |
 | **Live Demo** | https://n-gate-pos-v-5.replit.app/ngate/ |
-| **Slide Deck** | Included in the official hackathon submission package |
-| **Demo Video** | Included in the official hackathon submission package |
+| **Demo Video** | https://youtu.be/7VKbkwWt6Go |
 
 ---
 
