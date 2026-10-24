@@ -1,0 +1,32 @@
+modules = ["nodejs-24", "python-base-3.13"]
+
+[deployment]
+router = "application"
+deploymentTarget = "autoscale"
+
+[deployment.postBuild]
+args = ["pnpm", "store", "prune"]
+env = { "CI" = "true" }
+
+[workflows]
+runButton = "Project"
+
+[agent]
+stack = "PNPM_WORKSPACE"
+expertMode = true
+
+[postMerge]
+path = "scripts/post-merge.sh"
+timeoutMs = 20000
+
+[userenv]
+
+[userenv.shared]
+
+[userenv.development]
+FLASK_API_BASE_URL = "http://127.0.0.1:5051/api"
+VITE_DATA_SOURCE = "connected"
+
+[nix]
+channel = "stable-25_05"
+packages = ["freetype", "glibcLocales", "python313Packages.flask", "python313Packages.pytest", "python313Packages.reportlab"]

@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/ngate/"
+title = "NGate Backend"
+description = "Standalone NGate Flask and SQLite demo API. Backend only; no frontend."
+version = "1.0.0"
+id = "artifacts/ngate-backend"
+router = "path"
+
+[[services]]
+name = "web"
+paths = ["/ngate/"]
+localPort = 25574
+
+[services.development]
+run = "python app.py"
+
+[services.production.build]
+args = ["uv", "sync", "--frozen"]
+
+[services.production.run]
+args = ["python", "artifacts/ngate-backend/app.py"]
+
+[services.production.health.startup]
+path = "/ngate/api/health"
+
+[services.env]
+PORT = "25574"
+BASE_PATH = "/ngate/"

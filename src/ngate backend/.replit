@@ -1,0 +1,3 @@
+entrypoint = "app.py"
+run = "python app.py"
+modules = ["python-3.11"]
